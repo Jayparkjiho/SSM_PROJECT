@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="buttonWhite"  parent="@android:style/DeviceDefault.ButtonBar">
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:background">@drawable/button_white</item>
+    </style>
+
+    <style name="buttonDefault"  parent="@android:style/DeviceDefault.ButtonBar">
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:background">@drawable/button_default</item>
+    </style>
+
+    <style name="backButton" parent="@android:style/TextAppearance.DeviceDefault">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">16dp</item>
+    </style>
+
+</resources>
