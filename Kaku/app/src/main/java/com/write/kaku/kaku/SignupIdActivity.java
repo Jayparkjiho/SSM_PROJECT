@@ -28,6 +28,8 @@ public class SignupIdActivity extends AppCompatActivity {
                 if (isVaildEamil){
 
                     //todo firebase 에서 이메일 체크
+
+
                     //email check boolean (임의설정)
                     boolean emailCheck = true;
 
