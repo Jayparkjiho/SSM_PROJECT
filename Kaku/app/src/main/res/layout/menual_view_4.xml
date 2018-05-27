@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <ImageView
+        android:id="@+id/menual4Img1"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/file_paper_img"
+        app:layout_constraintBottom_toTopOf="@+id/menual4Img2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <ImageView
+        android:id="@+id/menual4Img2"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/file_img"
+        app:layout_constraintBottom_toTopOf="@+id/menual4PaperImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/menual4_right"
+        android:textColor="@color/manualFontColor"
+        app:layout_constraintBottom_toTopOf="@+id/menual4PaperImg"
+        app:layout_constraintEnd_toEndOf="@+id/menual4PaperImg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:text="@string/menual_left"
+        android:textColor="@color/manualFontColor"
+        app:layout_constraintBottom_toTopOf="@+id/menual4PaperImg"
+        app:layout_constraintStart_toStartOf="@+id/menual4PaperImg" />
+
+    <ImageView
+        android:id="@+id/menual4PaperImg"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/paper_image"
+        app:layout_constraintBottom_toTopOf="@+id/menual4ButtonArea"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/menual4PaperText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/menual4_text1"
+        android:textColor="@color/fontColor"
+        app:layout_constraintBottom_toBottomOf="@+id/menual4PaperImg"
+        app:layout_constraintEnd_toEndOf="@+id/menual4PaperImg"
+        app:layout_constraintStart_toStartOf="@+id/menual4PaperImg"
+        app:layout_constraintTop_toTopOf="@+id/menual4PaperImg"
+        app:layout_constraintVertical_bias="0.11" />
+
+    <TextView
+        android:id="@+id/menual4PaperText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/menual4_text2"
+        android:textColor="@color/fontColor"
+        app:layout_constraintEnd_toEndOf="@+id/menual4PaperImg"
+        app:layout_constraintStart_toStartOf="@+id/menual4PaperImg"
+        app:layout_constraintTop_toBottomOf="@+id/menual4PaperText1"
+        />
+
+    <TextView
+        android:id="@+id/menual4PaperText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/menual4_text3"
+        android:textColor="@color/fontColor"
+        app:layout_constraintEnd_toEndOf="@+id/menual4PaperImg"
+        app:layout_constraintStart_toStartOf="@+id/menual4PaperImg"
+        app:layout_constraintTop_toBottomOf="@+id/menual4PaperText2"
+        />
+
+    <LinearLayout
+        android:id="@+id/menual4ButtonArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="16dp"
+        android:paddingTop="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/menual1PaperImg"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/circle_16px_gray" />
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/circle_16px_gray" />
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/circle_16px_gray" />
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/circle_16px_black" />
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/circle_16px_gray" />
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/circle_16px_gray"
+            android:contentDescription="TODO" />
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

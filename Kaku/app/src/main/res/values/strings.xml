@@ -1,3 +1,49 @@
 <resources>
-    <string name="app_name">Kaku</string>
+    <!-- common -->
+    <string name="app_name">SSUM_View</string>
+    <string name="backbutton">&lt; back</string>
+
+
+    <!-- loading text -->
+    <string name="Title">書く</string>
+    <string name="subTitle">日常の書き物</string>
+
+    <!-- menual #1 -->
+    <string name="menual_left">日常の書き物</string>
+
+    <!-- menual #1 -->
+    <string name="menual1_right">照会書＃1</string>
+    <string name="menual1_greeting">いらっしゃいます</string>
+    <string name="menual1_text1">初めまして。</string>
+    <string name="menual1_text2">'書く：日常の書き始まり'</string>
+
+    <!-- menual #2 -->
+    <string name="menual2_right">照会書＃2</string>
+    <string name="menual2_subText">毎日午前／午後7時に表します</string>
+    <string name="menual2_text1">書くは皆様に一日二回</string>
+    <string name="menual2_text2">新しい主題を教えていただきます</string>
+    <string name="menual2_text3">あなたの大切な書き物をお待ちします</string>
+
+    <!-- menual #3 -->
+    <string name="menual3_right">照会書＃3</string>
+    <string name="menual3_text1">書いた書き物を公開したり、</string>
+    <string name="menual3_text2">主題に対する素敵で素晴らしいな考えを</string>
+    <string name="menual3_text3">見ることができます</string>
+
+    <!-- menual #4 -->
+    <string name="menual4_right">照会書＃4</string>
+    <string name="menual4_text1">感銘深い書き物を持ち込むことができ、</string>
+    <string name="menual4_text2">もっと多い書き物を読みたい人を</string>
+    <string name="menual4_text3">購読することができます</string>
+
+    <!-- menual #5 -->
+    <string name="menual5_text1">世の中にはかっこいい考えは多いし、</string>
+    <string name="menual5_text2">私たちは誰でも書き物を書けることができます。</string>
+    <string name="menual5_text3">皆様を心から歓迎します。</string>
+
+    <!-- menual #6 -->
+    <string name="menual6_text">日常感想の書き始まり</string>
+
+
+
 </resources>
