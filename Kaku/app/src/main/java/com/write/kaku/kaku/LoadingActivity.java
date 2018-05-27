@@ -10,11 +10,18 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class LoadingActivity extends Activity {
+
+    static FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        mAuth = FirebaseAuth.getInstance();
+
         setContentView(R.layout.loding_view);
 
         /* animation call */
@@ -29,8 +36,16 @@ public class LoadingActivity extends Activity {
         new Handler().postDelayed(new Runnable(){
             @Override
             public void run() {
-                Intent mainIntent = new Intent(LoadingActivity.this, ManualActivity.class);
-                LoadingActivity.this.startActivity(mainIntent);
+
+                Intent mintent = null;
+
+                if(mAuth.getCurrentUser() != null){
+                    mintent = new Intent(LoadingActivity.this, MainActivity.class);
+                } else{
+                    mintent = new Intent(LoadingActivity.this, ManualActivity.class);
+                }
+
+                LoadingActivity.this.startActivity(mintent);
                 LoadingActivity.this.finish();
             }
         }, 3000);
