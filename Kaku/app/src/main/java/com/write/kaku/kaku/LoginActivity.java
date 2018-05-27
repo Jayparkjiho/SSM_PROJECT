@@ -28,13 +28,14 @@ public class LoginActivity extends AppCompatActivity {
                 if (isVaildEamil){
 
                     //todo firebase 에서 이메일 체크
+
                     //email check boolean (임의설정)
                     boolean emailCheck = true;
 
                     if(emailCheck){
-//                        Intent intent = new Intent(SignupIdActivity.this, SignupPwActivity.class );
-//                        intent.putExtra("email", email);
-//                        startActivity(intent);
+                        Intent intent = new Intent(LoginActivity.this, PasswordActivity.class );
+                        intent.putExtra("email", email);
+                        startActivity(intent);
                     } else {
                         //todo 빨리 끝내자 이거
                         // Email이 존재하는 경우

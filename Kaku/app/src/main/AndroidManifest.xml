@@ -22,6 +22,8 @@
         <activity android:name=".SignupIdActivity"></activity>
         <activity android:name=".SignupPwActivity"></activity>
         <activity android:name=".SignupNnActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".PasswordActivity"></activity>
     </application>
 
 </manifest>
