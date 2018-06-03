@@ -30,24 +30,12 @@ public class PasswordActivity extends AppCompatActivity {
                 String email = getIntent().getExtras().getString("email");
                 String password = inputPassword.getText().toString();
 
-                //todo password 체크 글자수 및 형식
-
-                // 임의 패스워드 체크 상태
-                boolean passwordCheck = true;
-
-                if (passwordCheck){
-
-                    logInWithEmailAndPassword(email, password);
-
-                } else {
-                    //todo 빨리 끝내자 이거
-                    // passwordCheck 틀렸을 경우
-                }
+                logInWithEmailAndPassword(email, password);
             }
         });
     }
 
-    public Task<AuthResult> logInWithEmailAndPassword(String email, String password){
+    public void logInWithEmailAndPassword(String email, String password){
 
         LoadingActivity.mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(PasswordActivity.this, new OnCompleteListener<AuthResult>() {
 
@@ -61,7 +49,5 @@ public class PasswordActivity extends AppCompatActivity {
                 }
             }
         });
-
-        return null;
     }
 }
