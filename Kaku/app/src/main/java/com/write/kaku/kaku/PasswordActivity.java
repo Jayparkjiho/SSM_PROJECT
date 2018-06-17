@@ -36,9 +36,6 @@ public class PasswordActivity extends AppCompatActivity {
     public void passwordConfirmButtonClick(View view) {
         email = getIntent().getExtras().getString("email");
         password = binding.inputPassword.getText().toString();
-        Log.i("email",email);
-        Log.i("pwd",password);
-
         logInWithEmailAndPassword(email, password);
     }
 
