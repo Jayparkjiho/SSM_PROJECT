@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="Activity"
+            type="com.write.kaku.kaku.SignupNnActivity">
+        </variable>
+    </data>
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -44,8 +52,10 @@
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:text="確認"
+        android:onClick="@{Activity::NnConfirmButtonCheck}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/inputNn" />
 
 </android.support.constraint.ConstraintLayout>
+</layout>

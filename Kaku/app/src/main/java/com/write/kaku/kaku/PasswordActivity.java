@@ -1,9 +1,11 @@
 package com.write.kaku.kaku;
 
 import android.content.Intent;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,32 +14,39 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.write.kaku.kaku.databinding.PasswordViewBinding;
 
 public class PasswordActivity extends AppCompatActivity {
+
+    PasswordViewBinding binding;
+    FirebaseAuth mAuth;
+    String email;
+    String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.password_view);
+        binding = DataBindingUtil.setContentView(this,R.layout.password_view);
+        mAuth = FirebaseAuth.getInstance();
+        binding.setActivity(this);
 
-        Button passwordConfirmButton = (Button)findViewById(R.id.passwordConfirmButton);
-        final EditText inputPassword = (EditText)findViewById(R.id.inputPassword);
+    }
 
-        passwordConfirmButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+    public void passwordConfirmButtonClick(View view) {
+        email = getIntent().getExtras().getString("email");
+        password = binding.inputPassword.getText().toString();
+        Log.i("email",email);
+        Log.i("pwd",password);
 
-                String email = getIntent().getExtras().getString("email");
-                String password = inputPassword.getText().toString();
-
-                logInWithEmailAndPassword(email, password);
-            }
-        });
+        logInWithEmailAndPassword(email, password);
     }
 
     public void logInWithEmailAndPassword(String email, String password){
+        Log.i("email",email);
+        Log.i("pwd",password);
 
-        LoadingActivity.mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(PasswordActivity.this, new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(PasswordActivity.this, new OnCompleteListener<AuthResult>() {
 
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -50,4 +59,6 @@ public class PasswordActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
