@@ -10,22 +10,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!--<activity android:name=".LoadingActivity">-->
-        <activity android:name=".MyStoryActivity">
+        <activity android:name=".LoadingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!-- <activity android:name=".LoginMainActivity"></activity> -->
+
         <activity android:name=".ManualActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
         <activity android:name=".SignupIdActivity"></activity>
         <activity android:name=".SignupPwActivity"></activity>
         <activity android:name=".SignupNnActivity"></activity>
-        <activity android:name=".MainActivity"></activity>
+        <!--<activity android:name=".MainActivity"></activity>-->
         <activity android:name=".PasswordActivity"></activity>
-        <!--<activity android:name=".MyStoryActivity"></activity>-->
+        <activity android:name=".MyStoryActivity"></activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main_view"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

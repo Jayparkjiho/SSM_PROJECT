@@ -40,7 +40,7 @@ public class MyStoryActivity extends AppCompatActivity {
         ViewPager viewPager = findViewById(R.id.viewPager);
 
     }
-    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Toolbar용 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    //<<<<<<<<<<<<<<<z<<<<<<<<<<<<<<<<<<<<<<<Toolbar용 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
