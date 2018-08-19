@@ -8,11 +8,16 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
+    <!--//toolbar include
+    //위에 탑-->
     <include
         layout="@layout/toolbar_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+
+    <!--//drawer func include
+    //사이드에서 나타나는 뷰-->
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
@@ -20,6 +25,8 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
         app:menu="@menu/drawer_content_main" >
+
+        <!--//사이드 왼쪽 하단에 나오는 아이콘들-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -48,48 +55,12 @@
                     android:text="setting"/>
             </LinearLayout>
         </LinearLayout>
-
-        <!--<TextView
-            android:id="@+id/loading_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="main view"
-            android:textColor="@color/fontColor"
-            android:textSize="30dp"
-
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        -->
-
-
-
     </android.support.design.widget.NavigationView>
 
-    <!--<android.support.v7.widget.Toolbar
-        android:id="@+id/my_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/background"
-        android:elevation="0dp"
-        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Toolbar Title"
-            android:layout_gravity="center"
-            android:id="@+id/toolbar_title"
-            android:textSize="20sp"
-            />
-
-    </android.support.v7.widget.Toolbar>
--->
-
+    <!--//main content place include
+    //화면에 보여지는 내용-->
+    <include layout="@layout/content_activity_main" />
 
 
 </android.support.v4.widget.DrawerLayout>

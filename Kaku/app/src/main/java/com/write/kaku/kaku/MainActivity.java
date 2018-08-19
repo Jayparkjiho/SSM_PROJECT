@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity
 
         Toolbar mainToolbar = (Toolbar) findViewById(R.id.main_toolbar);
         setSupportActionBar(mainToolbar);
-  /*      getSupportActionBar().setHomeAsUpIndicator(R.drawable.menu_32);*/
         //Toolbar 타이틀이름제거
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         //만든 타이틀이름 지정
@@ -66,28 +65,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-
-
-
-        /*Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
-        setSupportActionBar(myToolbar);
-        //왼쪽 drawer메뉴바 사용
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.menu_32);
-        //Toolbar 타이틀이름제거
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-*/
     }
-
-    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Toolbar용 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-   /* @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu, menu);
-        return true;
-    }*/
 
     @Override
     public void onBackPressed() {
