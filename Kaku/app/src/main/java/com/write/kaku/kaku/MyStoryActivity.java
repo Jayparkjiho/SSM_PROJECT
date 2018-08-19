@@ -1,46 +1,28 @@
 package com.write.kaku.kaku;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.design.widget.TabItem;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.FragmentTabHost;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.firebase.auth.FirebaseAuth;
+public class MyStoryActivity extends AppCompatActivity {
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
-
-public class MainActivity extends AppCompatActivity {
-
-    FirebaseAuth mAuth;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_view);
-
-        /*mAuth = FirebaseAuth.getInstance();
-
-        Button logout_button = (Button)findViewById(R.id.logout_button);
-
-        logout_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mAuth.signOut();
-                Intent intent = new Intent(MainActivity.this, ManualActivity.class);
-                startActivity(intent);
-            }
-        });*/
+        setContentView(R.layout.activity_mystory);
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
@@ -49,12 +31,15 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.menu_32);
         //Toolbar 타이틀이름제거
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        //만든 타이틀이름 지정
-        TextView toolbarTitle = findViewById(R.id.toolbar_title);
-        toolbarTitle.setText(getToday());
+
+        Toolbar secondToolbar = (Toolbar) findViewById(R.id.second_toolbar);
+//        secondToolbar.setTitle(getResources().getString(R.string.app_name));
+        TabLayout tabLayout = findViewById(R.id.tablayout);
+        TabItem tabMyStory = findViewById(R.id.tab_mystory);
+        TabItem tabSetStory = findViewById(R.id.tab_myset);
+        ViewPager viewPager = findViewById(R.id.viewPager);
 
     }
-
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Toolbar용 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -69,8 +54,8 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
 
             case android.R.id.home :
-                    Toast.makeText(getApplicationContext(), "홈 버튼 클릭됨", Toast.LENGTH_LONG).show();
-                    break;
+                Toast.makeText(getApplicationContext(), "홈 버튼 클릭됨", Toast.LENGTH_LONG).show();
+                break;
 
             case R.id.action_search :
                 Toast.makeText(getApplicationContext(), "검색 버튼 클릭됨", Toast.LENGTH_LONG).show();
@@ -90,15 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Toolbar용 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-    public String getToday(){
-        String today = "";
 
-        Date d = new Date();
 
-        SimpleDateFormat dToday = new SimpleDateFormat("yyyy年 MM月 dd日 aa", Locale.JAPAN);
 
-        today = dToday.format(d);
-
-        return today;
-    }
 }
