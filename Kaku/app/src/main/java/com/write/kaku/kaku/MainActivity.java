@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
+    /*@Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity
 
         }
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -120,21 +120,18 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_writing) {
-            // Handle the writing action
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         } else if (id == R.id.nav_topic) {
 
         } else if (id == R.id.nav_mypost) {
-
             Intent intent = new Intent(this, MyStoryActivity.class);
-
             startActivity(intent);
-
         } else if (id == R.id.nav_read) {
 
         } else if (id == R.id.nav_share) {
 
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
