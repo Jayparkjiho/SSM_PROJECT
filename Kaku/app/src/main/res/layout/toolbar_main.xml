@@ -27,11 +27,19 @@
                 android:layout_gravity="center"
                 android:id="@+id/toolbar_title"
                 android:textSize="20sp"
-                android:textColor="@color/gray"
-                />
+                android:textColor="@color/gray"/>
+
         </android.support.v7.widget.Toolbar>
+
     </android.support.design.widget.AppBarLayout>
 
-<!--    <include layout="@layout/content_activity_main" />-->
+    <FrameLayout
+        android:id="@+id/frame_Main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    </FrameLayout>
+
 
 </android.support.design.widget.CoordinatorLayout>

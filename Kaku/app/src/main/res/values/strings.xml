@@ -45,7 +45,6 @@
     <string name="menual6_text">日常感想の書き始まり</string>
 
 
-
     <!-- drawer veiw -->
     <string name="title_activity_main_view"></string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -54,5 +53,8 @@
         <string name="nav_header_subtitle">android.studio@android.com</string>
         <string name="nav_header_desc">Navigation header</string>-->
     <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

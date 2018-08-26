@@ -2,7 +2,7 @@ package com.write.kaku.kaku.SSM_Model;
 
 import java.util.Date;
 
-public class Book {
+public class Post {
     public int alignment;
     public int bookmarkCount;
     public String content;
@@ -12,9 +12,9 @@ public class Book {
     public String keyWord;
     public User user;
 
-    public Book(){}
+    public Post(){}
 
-    public Book(int alignment, int bookmarkCount, String content, Date createdAt, Date openedAt, Date updateAt, String keyWord, User user) {
+    public Post(int alignment, int bookmarkCount, String content, Date createdAt, Date openedAt, Date updateAt, String keyWord, User user) {
         this.alignment = alignment;
         this.bookmarkCount = bookmarkCount;
         this.content = content;

@@ -5,10 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
+    tools:context="com.write.kaku.kaku.MainActivity"
     tools:showIn="@layout/toolbar_main">
 
+    <!--<FrameLayout
+        android:id="@+id/frame_Main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+    </FrameLayout>-->
+
+<!--
     <TextView
         android:id="@+id/loading_txt"
         android:layout_width="wrap_content"
@@ -43,7 +51,7 @@
         app:layout_constraintTop_toBottomOf="@+id/loading_txt"
         app:layout_constraintVertical_bias="0.799"
         android:elevation="4dp"
-        />
+        />-->
 
 
 

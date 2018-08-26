@@ -47,7 +47,7 @@ public class MyStoryActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view_myStory);
         navigationView.setNavigationItemSelectedListener(this);
     }
 
@@ -104,7 +104,7 @@ public class MyStoryActivity extends AppCompatActivity
         } else if (id == R.id.nav_share) {
 
         }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_myStory);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
