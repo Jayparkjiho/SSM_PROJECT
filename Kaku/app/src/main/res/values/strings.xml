@@ -15,7 +15,7 @@
     <string name="menual1_right">照会書＃1</string>
     <string name="menual1_greeting">いらっしゃいます</string>
     <string name="menual1_text1">初めまして。</string>
-    <string name="menual1_text2">'書く：日常の書き始まり'</string>
+    <string name="menual1_text2">書く：日常の書き始まり</string>
 
     <!-- menual #2 -->
     <string name="menual2_right">照会書＃2</string>
@@ -44,6 +44,19 @@
     <!-- menual #6 -->
     <string name="menual6_text">日常感想の書き始まり</string>
 
+    <!-- main #1 -->
+    <string name="main1_text">오늘의 글감</string>
+    <!-- main #2 -->
+    <string name="main2_text1">글감 예시 내용 부분</string>
+    <string name="main2_text2">글감 예시 글쓴이 부분</string>
+    <string name="main2_text3">총000편 씀/000편 공개</string>
+    <string name="main2_text4">공개글쓰기로 가기</string>
+    <!-- main #3 -->
+    <string name="main3_text">아홉 편의 모음</string>
+
+    <!-- writepage -->
+    <string name="TodayTitle">타이틀입니다.</string>
+    <string name="confirmbtn">완료</string>
 
     <!-- drawer veiw -->
     <string name="title_activity_main_view"></string>
@@ -55,7 +68,10 @@
     <string name="action_settings">Settings</string>
 
     <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_Read_fragment">Hello Read fragment</string>
     <string name="hello_Share_fragment">Hello Share fragment</string>
     <string name="hello_Topic_fragment">Hello Topic fragment</string>
+
 </resources>
