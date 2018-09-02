@@ -9,9 +9,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_view);
+        Log.d("MainActivity","onCreate");
 
         //fragment test
 
@@ -55,7 +58,7 @@ public class MainActivity extends AppCompatActivity
 
 
         //select writing by default
-        navigationView.setCheckedItem(R.id.nav_writing);
+//        navigationView.setCheckedItem(R.id.nav_writing);
         Fragment fragment = new WriteFragment();
         displaySelectedFragment(fragment);
 
@@ -78,10 +81,13 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setNavigationItemSelectedListener(this);*/
 
 
-        mAuth = FirebaseAuth.getInstance();
+
+
+
+        /*mAuth = FirebaseAuth.getInstance();
 
         Button logout_button = (Button)findViewById(R.id.logout_button);
 
@@ -146,6 +152,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
+//        item.setChecked(false);
         int id = item.getItemId();
         Fragment fragment = null;
         if (id == R.id.nav_writing) {
@@ -163,7 +170,7 @@ public class MainActivity extends AppCompatActivity
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
-        return true;
+        return false;
     }
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Toolbar용 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>

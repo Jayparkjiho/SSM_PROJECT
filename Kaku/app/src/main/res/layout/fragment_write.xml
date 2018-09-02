@@ -6,7 +6,7 @@
     tools:context=".SSM_View_Fragements.WriteFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!--<TextView
         android:id="@+id/loading_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,10 +14,10 @@
         android:textColor="@color/fontColor"
         android:textSize="30dp" />
 
-    <!--app:layout_constraintBottom_toBottomOf="parent"
+    &lt;!&ndash;app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"-->
+        app:layout_constraintTop_toTopOf="parent"&ndash;&gt;
 
     <Button
         android:id="@+id/logout_button"
@@ -25,23 +25,79 @@
         android:layout_height="wrap_content"
         android:text="logout" />
 
-    <!--app:layout_constraintBottom_toBottomOf="parent"
+    &lt;!&ndash;app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/loading_txt"-->
+    app:layout_constraintTop_toBottomOf="@+id/loading_txt"&ndash;&gt;
 
     <ImageButton
         android:id="@+id/Writing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/circle_button"
-        android:src="@drawable/fountain_pen_32"
-        android:elevation="4dp" />
+        android:elevation="4dp"
+        android:src="@drawable/fountain_pen_32" />-->
 
     <!--app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/loading_txt"
     app:layout_constraintVertical_bias="0.799"-->
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.write.kaku.kaku.MainActivity"
+        tools:showIn="@layout/toolbar_main">
+
+        <!--<FrameLayout
+            android:id="@+id/frame_Main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        </FrameLayout>-->
+
+            <TextView
+                android:id="@+id/loading_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="main view"
+                android:textColor="@color/fontColor"
+                android:textSize="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/logout_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="logout"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/loading_txt" />
+
+            <ImageButton
+                android:id="@+id/Writing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle_button"
+                android:src="@drawable/fountain_pen_32"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/loading_txt"
+                app:layout_constraintVertical_bias="0.799"
+                android:elevation="4dp"
+                />
+
+
+
+    </android.support.constraint.ConstraintLayout>
 
 </FrameLayout>
