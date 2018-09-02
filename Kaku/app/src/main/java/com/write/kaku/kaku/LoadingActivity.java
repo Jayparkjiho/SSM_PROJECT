@@ -40,7 +40,7 @@ public class LoadingActivity extends Activity {
                 Intent mintent = null;
 
                 if(mAuth.getCurrentUser() != null){
-                    mintent = new Intent(LoadingActivity.this, MainActivity.class);
+                    mintent = new Intent(LoadingActivity.this, MainViewActivity.class);
                 } else{
                     mintent = new Intent(LoadingActivity.this, ManualActivity.class);
                 }

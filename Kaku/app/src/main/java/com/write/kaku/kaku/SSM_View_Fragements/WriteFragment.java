@@ -12,17 +12,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.write.kaku.kaku.MainActivity;
+import com.write.kaku.kaku.MainViewActivity;
 import com.write.kaku.kaku.ManualActivity;
 import com.write.kaku.kaku.R;
-
-
 
 public class WriteFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 
-    FirebaseAuth mAuth;
+    private FirebaseAuth mAuth;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -38,10 +36,9 @@ public class WriteFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
+        //fragment view 가져오기
         View view = inflater.inflate(R.layout.fragment_write, container, false);
-
-
+        //Firebaseauth object 가져오기
         mAuth = FirebaseAuth.getInstance();
 
         Button logout_button = (Button)view.findViewById(R.id.logout_button);
@@ -50,15 +47,13 @@ public class WriteFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 mAuth.signOut();
-                Intent intent = new Intent((MainActivity)getActivity(), ManualActivity.class);
+                Intent intent = new Intent((MainViewActivity)getActivity(), ManualActivity.class);
                 startActivity(intent);
 
                 Log.d("WriteFragment","click");
             }
         });
 
-        // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_write, container, false);
         return view;
     }
 

@@ -39,7 +39,7 @@ public class SignupNnActivity extends AppCompatActivity {
         mAuth.getCurrentUser().updateProfile(profileUpdate);
 
         if(nicknameCheck){
-            Intent intent = new Intent(SignupNnActivity.this, MainActivity.class );
+            Intent intent = new Intent(SignupNnActivity.this, MainViewActivity.class );
             startActivity(intent);
         }else{
             Toast.makeText(SignupNnActivity.this, "nickname already exist", Toast.LENGTH_SHORT).show();

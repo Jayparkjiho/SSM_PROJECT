@@ -25,7 +25,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity
+public class MainViewActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     FirebaseAuth mAuth;
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_view);
-        Log.d("MainActivity","onCreate");
+        Log.d("MainViewActivity","onCreate");
 
         //fragment test
 
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity
 
 
         //select writing by default
-//        navigationView.setCheckedItem(R.id.nav_writing);
+        //navigationView.setCheckedItem(R.id.nav_writing);
         Fragment fragment = new WriteFragment();
         displaySelectedFragment(fragment);
 
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 mAuth.signOut();
-                Intent intent = new Intent(MainActivity.this, ManualActivity.class);
+                Intent intent = new Intent(MainViewActivity.this, ManualActivity.class);
                 startActivity(intent);
             }
         });*/
@@ -112,12 +112,12 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -137,11 +137,11 @@ public class MainActivity extends AppCompatActivity
                 break;
 
 
-            default:
+            /*default:
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
                 Toast.makeText(getApplicationContext(), "나머지 버튼 클릭됨", Toast.LENGTH_LONG).show();
-                return super.onOptionsItemSelected(item);
+                return super.onOptionsItemSelected(item);*/
 
         }
         return super.onOptionsItemSelected(item);
@@ -182,8 +182,6 @@ public class MainActivity extends AppCompatActivity
         today = dToday.format(d);
         return today;
     }
-
-
 
 
     private void displaySelectedFragment(Fragment fragment) {
