@@ -48,7 +48,7 @@ public class WriteFragment extends Fragment {
         write_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent((MainActivity)getActivity(), WriteActivity.class);
+                Intent intent = new Intent((MainViewActivity)getActivity(), WriteActivity.class);
                 startActivity(intent);
 
             }
