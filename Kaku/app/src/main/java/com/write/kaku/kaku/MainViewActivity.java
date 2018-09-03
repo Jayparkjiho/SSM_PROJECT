@@ -19,6 +19,9 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.write.kaku.kaku.SSM_View_Fragements.MyPostFragment;
+import com.write.kaku.kaku.SSM_View_Fragements.ReadFragment;
+import com.write.kaku.kaku.SSM_View_Fragements.ShareFragment;
+import com.write.kaku.kaku.SSM_View_Fragements.TopicFragment;
 import com.write.kaku.kaku.SSM_View_Fragements.WriteFragment;
 
 import java.text.SimpleDateFormat;
@@ -55,14 +58,10 @@ public class MainViewActivity extends AppCompatActivity
         //navi refer
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-
         //select writing by default
         //navigationView.setCheckedItem(R.id.nav_writing);
         Fragment fragment = new WriteFragment();
         displaySelectedFragment(fragment);
-
-
 
         //original source
 
@@ -82,10 +81,6 @@ public class MainViewActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);*/
-
-
-
-
 
         /*mAuth = FirebaseAuth.getInstance();
 
@@ -152,29 +147,33 @@ public class MainViewActivity extends AppCompatActivity
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
-//        item.setChecked(false);
+        //item.setChecked(false);
         int id = item.getItemId();
         Fragment fragment = null;
+
         if (id == R.id.nav_writing) {
             fragment = new WriteFragment();
             displaySelectedFragment(fragment);
         } else if (id == R.id.nav_topic) {
-
+            fragment = new TopicFragment();
+            displaySelectedFragment(fragment);
         } else if (id == R.id.nav_mypost) {
             fragment = new MyPostFragment();
             displaySelectedFragment(fragment);
         } else if (id == R.id.nav_read) {
-
+            fragment = new ReadFragment();
+            displaySelectedFragment(fragment);
         } else if (id == R.id.nav_share) {
-
+            fragment = new ShareFragment();
+            displaySelectedFragment(fragment);
         }
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return false;
     }
 
     //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Toolbar용 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
     public String getToday(){
         String today = "";
         Date d = new Date();
@@ -182,6 +181,7 @@ public class MainViewActivity extends AppCompatActivity
         today = dToday.format(d);
         return today;
     }
+    //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<Toolbar용 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
     private void displaySelectedFragment(Fragment fragment) {

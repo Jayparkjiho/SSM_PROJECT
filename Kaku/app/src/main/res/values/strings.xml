@@ -55,6 +55,7 @@
     <string name="action_settings">Settings</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="hello_Read_fragment">Hello Read fragment</string>
+    <string name="hello_Share_fragment">Hello Share fragment</string>
+    <string name="hello_Topic_fragment">Hello Topic fragment</string>
 </resources>
