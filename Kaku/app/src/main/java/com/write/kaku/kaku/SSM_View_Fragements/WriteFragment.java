@@ -10,11 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.write.kaku.kaku.MainViewActivity;
 import com.write.kaku.kaku.ManualActivity;
 import com.write.kaku.kaku.R;
+import com.write.kaku.kaku.WriteActivity;
 
 public class WriteFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -38,10 +40,19 @@ public class WriteFragment extends Fragment {
                              Bundle savedInstanceState) {
         //fragment view 가져오기
         View view = inflater.inflate(R.layout.fragment_write, container, false);
-        //Firebaseauth object 가져오기
         mAuth = FirebaseAuth.getInstance();
 
         Button logout_button = (Button)view.findViewById(R.id.logout_button);
+        ImageButton write_button = (ImageButton)view.findViewById(R.id.Writing);
+
+        write_button.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent((MainActivity)getActivity(), WriteActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         logout_button.setOnClickListener(new View.OnClickListener() {
             @Override
