@@ -16,18 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ManualActivity"></activity>
-        <activity android:name=".LoginActivity"></activity>
-        <activity android:name=".SignupIdActivity"></activity>
-        <activity android:name=".SignupPwActivity"></activity>
-        <activity android:name=".SignupNnActivity"></activity>
-        <activity android:name=".PasswordActivity"></activity>
-        <activity android:name=".WriteActivity"></activity>
+        <activity android:name=".ManualActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignupIdActivity" />
+        <activity android:name=".SignupPwActivity" />
+        <activity android:name=".SignupNnActivity" />
+        <activity android:name=".PasswordActivity" />
+        <activity android:name=".WriteActivity" />
         <activity
             android:name=".MainViewActivity"
             android:label="@string/title_activity_main_view"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".WritePostActivity"></activity>
     </application>
 
 </manifest>
