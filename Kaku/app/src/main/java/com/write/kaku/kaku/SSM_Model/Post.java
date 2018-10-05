@@ -1,91 +1,53 @@
 package com.write.kaku.kaku.SSM_Model;
 
+import com.google.firebase.database.Exclude;
+import com.google.firebase.database.IgnoreExtraProperties;
+
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
+@IgnoreExtraProperties
 public class Post {
-    public int alignment;
-    public int bookmarkCount;
+
+    public String uid;
     public String content;
-    public Date createdAt;
-    public Date openedAt;
-    public Date updateAt;
+    public String createdAt;
+    public String openedAt;
+    public String updateAt;
     public String keyWord;
-    public User user;
+    public String user_uid;
+    public int bookmarkCount = 0;
 
-    public Post(){}
+    public Post(){
 
-    public Post(int alignment, int bookmarkCount, String content, Date createdAt, Date openedAt, Date updateAt, String keyWord, User user) {
-        this.alignment = alignment;
-        this.bookmarkCount = bookmarkCount;
+    }
+
+    public Post(String uid, String content, String createdAt, String openedAt, String updateAt, String keyWord, String user_uid, int bookmarkCount) {
+        this.uid = uid;
         this.content = content;
         this.createdAt = createdAt;
         this.openedAt = openedAt;
         this.updateAt = updateAt;
         this.keyWord = keyWord;
-        this.user = user;
-    }
-
-    public int getAlignment() {
-        return alignment;
-    }
-
-    public void setAlignment(int alignment) {
-        this.alignment = alignment;
-    }
-
-    public int getBookmarkCount() {
-        return bookmarkCount;
-    }
-
-    public void setBookmarkCount(int bookmarkCount) {
+        this.user_uid = user_uid;
         this.bookmarkCount = bookmarkCount;
     }
 
-    public String getContent() {
-        return content;
+    @Exclude
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("uid", uid);
+        result.put("content", content);
+        result.put("createdAt", createdAt);
+        result.put("openedAt", openedAt);
+        result.put("updateAt", updateAt);
+        result.put("keyWord", keyWord);
+        result.put("user_uid", user_uid);
+        result.put("bookmarkCount", bookmarkCount);
+
+        return result;
     }
 
-    public void setContent(String content) {
-        this.content = content;
-    }
 
-    public Date getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Date getOpenedAt() {
-        return openedAt;
-    }
-
-    public void setOpenedAt(Date openedAt) {
-        this.openedAt = openedAt;
-    }
-
-    public Date getUpdateAt() {
-        return updateAt;
-    }
-
-    public void setUpdateAt(Date updateAt) {
-        this.updateAt = updateAt;
-    }
-
-    public String getKeyWord() {
-        return keyWord;
-    }
-
-    public void setKeyWord(String keyWord) {
-        this.keyWord = keyWord;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
 }
