@@ -1,5 +1,6 @@
 package com.write.kaku.kaku;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -8,8 +9,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.write.kaku.kaku.SSM_Model.KeyWord;
 import com.write.kaku.kaku.SSM_Model.Post;
 
 import java.text.SimpleDateFormat;
@@ -23,6 +28,7 @@ public class WritePostActivity extends AppCompatActivity implements View.OnClick
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
     private EditText textbody;
+    private TextView headkeyword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +42,10 @@ public class WritePostActivity extends AppCompatActivity implements View.OnClick
         TextView confirmText = (TextView)findViewById(R.id.confirmbtn);
         confirmText.setOnClickListener(this);
         textbody = (EditText)findViewById(R.id.textbody);
+        headkeyword = (TextView)findViewById(R.id.keyword);
+
+        Intent intent = getIntent();
+        headkeyword.setText(intent.getExtras().getString("Keyword"));
 
     }
 
@@ -47,9 +57,10 @@ public class WritePostActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.confirmbtn:
                 String content = textbody.getText().toString();
+                String keyword = headkeyword.getText().toString();
                 String userUId = mAuth.getCurrentUser().getUid();
 
-                writeNewPost(userUId, "keword-test", content);
+                writeNewPost(userUId, keyword, content);
                 onBackPressed();
                 break;
         }
@@ -65,8 +76,15 @@ public class WritePostActivity extends AppCompatActivity implements View.OnClick
         Map<String, Object> postValues = post.toMap();
 
         Map<String, Object> chlidUpdates = new HashMap<>();
-        chlidUpdates.put("/posts/" + key, postValues);
-        chlidUpdates.put("/user-posts/" + userUId + "/" + key, postValues);
+
+        if(mAuth.getCurrentUser().getEmail().equals("admin@admin.com")){
+            KeyWord k1 = new KeyWord(contents, getToday());
+            chlidUpdates.put("/keywords/" + getToday(), k1);
+        }else{
+            chlidUpdates.put("/posts/" + key, postValues);
+            chlidUpdates.put("/user-posts/" + userUId + "/" + key, postValues);
+        }
+
 
         mDatabase.updateChildren(chlidUpdates);
     }
@@ -78,4 +96,5 @@ public class WritePostActivity extends AppCompatActivity implements View.OnClick
         today = dToday.format(d);
         return today;
     }
+
 }
