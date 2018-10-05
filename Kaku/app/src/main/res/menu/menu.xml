@@ -5,7 +5,7 @@
     <item
         android:id="@+id/action_search"
         android:title="검색"
-        android:icon="@drawable/search_128"
+        android:icon="@drawable/search_128t"
         app:showAsAction="ifRoom"/>
 
 </menu>

@@ -2,7 +2,10 @@ package com.write.kaku.kaku;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -12,8 +15,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +24,7 @@ import com.write.kaku.kaku.SSM_View_Fragements.ReadFragment;
 import com.write.kaku.kaku.SSM_View_Fragements.ShareFragment;
 import com.write.kaku.kaku.SSM_View_Fragements.TopicFragment;
 import com.write.kaku.kaku.SSM_View_Fragements.WriteFragment;
+import com.write.kaku.kaku.SSM_View_Fragements.MyPostToMyWriteFragment;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -32,6 +34,8 @@ public class MainViewActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     FirebaseAuth mAuth;
+    TextView toolbarTitle;
+    FragmentPagerAdapter adapterViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +50,7 @@ public class MainViewActivity extends AppCompatActivity
         //Toolbar 타이틀이름제거
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         //만든 타이틀이름 지정
-        TextView toolbarTitle = findViewById(R.id.toolbar_title);
+        toolbarTitle = findViewById(R.id.toolbar_title);
         toolbarTitle.setText(getToday());
 
         //Drawer refer
@@ -63,37 +67,7 @@ public class MainViewActivity extends AppCompatActivity
         Fragment fragment = new WriteFragment();
         displaySelectedFragment(fragment);
 
-        //original source
 
-        /*Toolbar mainToolbar = (Toolbar) findViewById(R.id.main_toolbar);
-        setSupportActionBar(mainToolbar);
-        //Toolbar 타이틀이름제거
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        //만든 타이틀이름 지정
-        TextView toolbarTitle = findViewById(R.id.toolbar_title);
-        toolbarTitle.setText(getToday());
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, mainToolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);*/
-
-        /*mAuth = FirebaseAuth.getInstance();
-
-        Button logout_button = (Button)findViewById(R.id.logout_button);
-
-        logout_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mAuth.signOut();
-                Intent intent = new Intent(MainViewActivity.this, ManualActivity.class);
-                startActivity(intent);
-            }
-        });*/
 
     }
 
@@ -107,12 +81,12 @@ public class MainViewActivity extends AppCompatActivity
         }
     }
 
-    /*@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu, menu);
         return true;
-    }*/
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -154,12 +128,14 @@ public class MainViewActivity extends AppCompatActivity
         if (id == R.id.nav_writing) {
             fragment = new WriteFragment();
             displaySelectedFragment(fragment);
+            toolbarTitle.setText(getToday());
         } else if (id == R.id.nav_topic) {
             fragment = new TopicFragment();
             displaySelectedFragment(fragment);
         } else if (id == R.id.nav_mypost) {
             fragment = new MyPostFragment();
             displaySelectedFragment(fragment);
+            toolbarTitle.setText("");
         } else if (id == R.id.nav_read) {
             fragment = new ReadFragment();
             displaySelectedFragment(fragment);
@@ -188,5 +164,44 @@ public class MainViewActivity extends AppCompatActivity
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frame_Main, fragment);
         fragmentTransaction.commit();
+    }
+
+
+    /** viewpager*/
+    public static class MyPagerAdapter extends FragmentPagerAdapter {
+        private static int NUM_ITEMS = 3;
+
+        public MyPagerAdapter(FragmentManager fragmentManager) {
+            super(fragmentManager);
+        }
+
+        // Returns total number of pages
+        @Override
+        public int getCount() {
+            return NUM_ITEMS;
+        }
+
+        // Returns the fragment to display for that page
+        @Override
+        public Fragment getItem(int position) {
+            switch (position) {
+                case 0: // Fragment # 0 - This will show FirstFragment
+                    return MyPostToMyWriteFragment.newInstance(0, "Page # 1");
+                case 1: // Fragment # 0 - This will show FirstFragment different title
+                    return MyPostToMyWriteFragment.newInstance(1, "Page # 2");
+                case 2: // Fragment # 1 - This will show SecondFragment
+//                    return SecondFragment.newInstance(2, "Page # 3");
+                    return MyPostToMyWriteFragment.newInstance(2, "Page # 3");
+                default:
+                    return null;
+            }
+        }
+
+        // Returns the page title for the top indicator
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return "Page " + position;
+        }
+
     }
 }
