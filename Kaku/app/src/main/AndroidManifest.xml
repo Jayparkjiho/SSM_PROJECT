@@ -22,12 +22,12 @@
         <activity android:name=".SignupPwActivity" />
         <activity android:name=".SignupNnActivity" />
         <activity android:name=".PasswordActivity" />
-        <activity android:name=".WriteActivity" />
+        <activity android:name=".WritePostActivity"></activity>
         <activity
             android:name=".MainViewActivity"
             android:label="@string/title_activity_main_view"
             android:theme="@style/AppTheme" />
-        <activity android:name=".WritePostActivity"></activity>
+
     </application>
 
 </manifest>

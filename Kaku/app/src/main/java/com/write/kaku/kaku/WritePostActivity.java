@@ -85,7 +85,6 @@ public class WritePostActivity extends AppCompatActivity implements View.OnClick
             chlidUpdates.put("/user-posts/" + userUId + "/" + key, postValues);
         }
 
-
         mDatabase.updateChildren(chlidUpdates);
     }
 
