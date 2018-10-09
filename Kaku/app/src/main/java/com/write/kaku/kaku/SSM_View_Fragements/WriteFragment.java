@@ -26,7 +26,6 @@ import com.write.kaku.kaku.MainViewActivity;
 import com.write.kaku.kaku.ManualActivity;
 import com.write.kaku.kaku.R;
 import com.write.kaku.kaku.SSM_Model.KeyWord;
-import com.write.kaku.kaku.WriteActivity;
 import com.write.kaku.kaku.WritePostActivity;
 
 import java.text.SimpleDateFormat;

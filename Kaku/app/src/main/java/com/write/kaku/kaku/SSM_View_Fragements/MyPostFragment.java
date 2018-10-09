@@ -22,7 +22,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.write.kaku.kaku.MainViewActivity;
 import com.write.kaku.kaku.R;
 import com.write.kaku.kaku.SSM_View_Util.PagerAdapter;
-import com.write.kaku.kaku.WriteActivity;
 
 import org.w3c.dom.Text;
 
