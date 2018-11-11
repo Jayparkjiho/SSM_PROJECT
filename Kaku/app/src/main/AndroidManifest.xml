@@ -22,11 +22,33 @@
         <activity android:name=".SignupPwActivity" />
         <activity android:name=".SignupNnActivity" />
         <activity android:name=".PasswordActivity" />
-        <activity android:name=".WritePostActivity"></activity>
+        <activity android:name=".WritePostActivity" />
         <activity
             android:name=".MainViewActivity"
             android:label="@string/title_activity_main_view"
             android:theme="@style/AppTheme" />
+
+
+
+        <activity android:name=".NotificationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name=".SSM_Notification.MyFirebaseMessagingService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".SSM_Notification.FirebaseIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
 
     </application>
 
